@@ -7,7 +7,7 @@ export default class Home extends Component {
     return (
       <div className="Home">
         <p className="Home-intro">
-          <Link to="/search">Search YouTube</Link>
+          <Link to="/search">Search</Link>
         </p>
       </div>
     );

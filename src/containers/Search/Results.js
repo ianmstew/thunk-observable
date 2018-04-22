@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 export default class Render extends Component {
   render() {
-    const { videos } = this.props;
+    const { results } = this.props;
 
     return (
       <div>
-        {videos.loading.started && (
+        {results.loading.started && (
           <pre>Loading...</pre>
         )}
-        {videos.loading.succeeded && (
+        {results.loading.succeeded && (
           <pre>
-            {JSON.stringify(videos.data, null, 2)}
+            {JSON.stringify(results.data, null, 2)}
           </pre>
         )}
       </div>
@@ -21,5 +21,5 @@ export default class Render extends Component {
 }
 
 Render.propTypes = {
-  videos: PropTypes.object.isRequired
+  results: PropTypes.object.isRequired
 };

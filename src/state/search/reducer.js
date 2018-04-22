@@ -1,29 +1,29 @@
-import loading from 'constants/loading';
-import actionTypes from './actionTypes';
+import loading from "constants/loading";
+import actionTypes from "./actionTypes";
 
 const initialState = {
-  videos: {
+  results: {
     loading: loading.INITIAL,
     data: [],
     error: null
   }
 };
 
-export default function videosReducer(state = initialState, action) {
+export default function searchReducer(state = initialState, action) {
   switch (action.type) {
     case actionTypes.SEARCH_STARTED:
       return {
         ...state,
-        videos: {
-          ...state.videos,
+        results: {
+          ...state.results,
           loading: loading.STARTED
         }
       };
     case actionTypes.SEARCH_SUCCEEDED:
       return {
         ...state,
-        videos: {
-          ...state.videos,
+        results: {
+          ...state.results,
           loading: loading.SUCCEEDED,
           data: action.payload,
           error: null
@@ -32,8 +32,8 @@ export default function videosReducer(state = initialState, action) {
     case actionTypes.SEARCH_FAILED:
       return {
         ...state,
-        videos: {
-          ...state.videos,
+        results: {
+          ...state.results,
           loading: loading.FAILED,
           error: action.payload
         }
