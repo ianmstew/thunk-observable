@@ -7,9 +7,7 @@ export default class Render extends Component {
   render() {
     return (
       <div>
-        <Helmet
-          title="Search"
-        />
+        <Helmet title="Search" />
         <Query {...this.props} />
         <Results {...this.props} />
       </div>

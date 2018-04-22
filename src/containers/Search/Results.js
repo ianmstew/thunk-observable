@@ -7,13 +7,9 @@ export default class Render extends Component {
 
     return (
       <div>
-        {results.loading.started && (
-          <pre>Loading...</pre>
-        )}
+        {results.loading.started && <pre>Loading...</pre>}
         {results.loading.succeeded && (
-          <pre>
-            {JSON.stringify(results.data, null, 2)}
-          </pre>
+          <pre>{JSON.stringify(results.data, null, 2)}</pre>
         )}
       </div>
     );

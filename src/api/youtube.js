@@ -10,6 +10,8 @@ export async function search(query, pageToken) {
     pageToken
   });
 
-  const resp = await fetch(`https://www.googleapis.com/youtube/v3/search?${searchStr}`);
+  const resp = await fetch(
+    `https://www.googleapis.com/youtube/v3/search?${searchStr}`
+  );
   return resp.json();
 }

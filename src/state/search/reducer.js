@@ -1,5 +1,5 @@
-import loading from "constants/loading";
-import actionTypes from "./actionTypes";
+import loading from 'constants/loading';
+import actionTypes from './actionTypes';
 
 const initialState = {
   results: {
