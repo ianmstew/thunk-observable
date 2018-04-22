@@ -1,0 +1,6 @@
+export default {
+  INITIAL: 'INITIAL',
+  STARTED: 'STARTED',
+  SUCCEEDED: 'SUCCEEDED',
+  FAILED: 'FAILED'
+};

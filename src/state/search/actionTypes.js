@@ -1,0 +1,5 @@
+export default {
+  SEARCH_STARTED: 'search/SEARCH_STARTED',
+  SEARCH_SUCCEEDED: 'search/SEARCH_SUCCEEDED',
+  SEARCH_FAILED: 'search/SEARCH_FAILED'
+};
