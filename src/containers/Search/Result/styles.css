@@ -1,0 +1,26 @@
+.Result {
+  float: left;
+  width: 320px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.Result-title {
+  height: 32px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.Result-thumbnailContainer {
+  position: relative;
+  width: 320px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.Result-thumbnail {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

@@ -4,16 +4,17 @@ import * as searchActions from 'state/search/actions';
 import Render from './Render';
 
 class Layout extends Component {
+  componentDidMount() {
+    const { enter } = this.props;
+    enter();
+  }
+
   render() {
     return <Render {...this.props} />;
   }
 }
 
-const mapStateToProps = (state) => ({
-  ...state.search
-});
-const mapDispatchToProps = {
-  ...searchActions
-};
+const mapStateToProps = (state) => state.search;
+const mapDispatchToProps = searchActions;
 
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

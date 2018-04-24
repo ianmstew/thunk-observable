@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import logLevels from 'constants/logLevels';
 
-export function debug(...args) {
+export function logDebug(...args) {
   if (window.LOG_LEVEL <= logLevels.DEBUG) {
     console.debug(...args);
   }
@@ -13,13 +13,13 @@ export function log(...args) {
   }
 }
 
-export function warn(...args) {
+export function logWarn(...args) {
   if (window.LOG_LEVEL <= logLevels.WARN) {
     console.warn(...args);
   }
 }
 
-export function error(...args) {
+export function logError(...args) {
   if (window.LOG_LEVEL <= logLevels.ERROR) {
     console.error(...args);
   }

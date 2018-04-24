@@ -5,10 +5,10 @@ import Home from 'containers/Home';
 import Search from 'containers/Search';
 import './styles.css';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <Helmet
           titleTemplate="%s - Thunk-Observable"
           defaultTitle="Thunk-Observable"
@@ -31,5 +31,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

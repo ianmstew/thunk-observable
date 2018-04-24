@@ -1,6 +1,9 @@
-import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 import { routerMiddleware } from 'react-router-redux';
-import epic from './epic';
-import logging from './logging';
+import loggingMiddleware from './loggingMiddleware';
 
-export default (history) => [thunk, epic, routerMiddleware(history), logging];
+export default (history) => [
+  thunkMiddleware,
+  routerMiddleware(history),
+  loggingMiddleware
+];
