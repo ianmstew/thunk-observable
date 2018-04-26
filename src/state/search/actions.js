@@ -30,3 +30,7 @@ export const setVideoDuration = (videoDuration) => ({
 export const enter = () => ({
   type: actionTypes.ENTER
 });
+
+export const submitSearch = () => ({
+  type: actionTypes.SUBMIT_SEARCH
+});
