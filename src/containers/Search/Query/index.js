@@ -3,6 +3,22 @@ import { VideoDuration } from 'state/search/models';
 import './styles.css';
 
 export default class Query extends Component {
+  handleSubmit = (evt) => {
+    evt.preventDefault();
+    const { query, search } = this.props;
+    search(query);
+  };
+
+  handleNextClick = () => {
+    const { loadPage, results } = this.props;
+    loadPage(results.data.nextPageToken);
+  };
+
+  handlePreviousClick = () => {
+    const { loadPage, results } = this.props;
+    loadPage(results.data.prevPageToken);
+  };
+
   handleQueryTermChange = (evt) => {
     const { setQueryTerm } = this.props;
     setQueryTerm(evt.target.value);
@@ -11,22 +27,6 @@ export default class Query extends Component {
   handleVideoDurationChange = (evt) => {
     const { setVideoDuration } = this.props;
     setVideoDuration(evt.target.value);
-  };
-
-  handleSubmit = (evt) => {
-    evt.preventDefault();
-    const { query, search } = this.props;
-    search(query);
-  };
-
-  handlePreviousClick = () => {
-    const { loadPage, results } = this.props;
-    loadPage(results.data.prevPageToken);
-  };
-
-  handleNextClick = () => {
-    const { loadPage, results } = this.props;
-    loadPage(results.data.nextPageToken);
   };
 
   render() {

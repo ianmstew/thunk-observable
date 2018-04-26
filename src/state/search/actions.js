@@ -1,9 +1,7 @@
 import * as youtubeApi from 'api/youtube';
 import actionTypes from './actionTypes';
 
-export const search = () => async (dispatch, getState) => {
-  const { query } = getState().search;
-
+export const search = (query) => async (dispatch) => {
   dispatch({
     type: actionTypes.SEARCH_STARTED
   });
@@ -21,21 +19,20 @@ export const search = () => async (dispatch, getState) => {
   }
 };
 
-export const enter = () => (dispatch) => {
-  dispatch(search());
-};
-
 export const loadPage = (pageToken) => (dispatch, getState) => {
-  dispatch(setPageToken(pageToken));
-  dispatch(search());
+  dispatch({
+    type: actionTypes.LOAD_PAGE,
+    payload: {
+      pageToken
+    }
+  });
+  dispatch(
+    search({
+      ...getState().search.query,
+      pageToken
+    })
+  );
 };
-
-export const setPageToken = (pageToken) => ({
-  type: actionTypes.SET_PAGE_TOKEN,
-  payload: {
-    pageToken
-  }
-});
 
 export const setQueryTerm = (queryTerm) => ({
   type: actionTypes.SET_QUERY_TERM,
@@ -44,12 +41,19 @@ export const setQueryTerm = (queryTerm) => ({
   }
 });
 
-export const setVideoDuration = (videoDuration) => (dispatch) => {
+export const setVideoDuration = (videoDuration) => (dispatch, getState) => {
   dispatch({
     type: actionTypes.SET_VIDEO_DURATION,
     payload: {
       videoDuration
     }
   });
-  dispatch(search());
+  dispatch(search(getState().search.query));
+};
+
+export const enter = () => (dispatch, getState) => {
+  dispatch({
+    type: actionTypes.ENTER
+  });
+  dispatch(search(getState().search.query));
 };
