@@ -3,20 +3,9 @@ import actionTypes from './actionTypes';
 
 export const search = (query) => async (dispatch) => {
   dispatch({
-    type: actionTypes.SEARCH_STARTED
+    type: actionTypes.SEARCH,
+    promise: youtubeApi.search(query)
   });
-
-  try {
-    const results = await youtubeApi.search(query);
-    dispatch({
-      type: actionTypes.SEARCH_SUCCEEDED,
-      payload: results
-    });
-  } catch (error) {
-    dispatch({
-      type: actionTypes.SEARCH_FAILED
-    });
-  }
 };
 
 export const loadPage = (pageToken) => (dispatch, getState) => {
