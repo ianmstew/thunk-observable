@@ -10,7 +10,7 @@ const initialState = {
   },
   results: {
     loading: loading.INITIAL,
-    data: []
+    data: {}
   }
 };
 

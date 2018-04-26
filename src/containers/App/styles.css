@@ -1,6 +1,6 @@
 .App-header {
   background-color: #222;
-  padding: 20px;
+  padding: 20px 30px;
   color: white;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .App-main {
-  padding: 20px;
+  padding: 30px;
 }
 
 @keyframes App-logo-spin {

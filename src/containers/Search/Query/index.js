@@ -34,42 +34,37 @@ export default class Query extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} className="Query">
-        <div className="Query-search">
-          <input
-            value={query.queryTerm}
-            onChange={this.handleQueryTermChange}
-          />
-          <button disabled={results.loading.started}>Search</button>
-          <label className="Query-field">
-            Duration:&nbsp;
-            <select
-              value={query.videoDuration}
-              onChange={this.handleVideoDurationChange}
-            >
-              {Object.values(VideoDuration).map((videoDuration) => (
-                <option key={videoDuration} value={videoDuration}>
-                  {videoDuration}
-                </option>
-              ))}
-            </select>
-          </label>
+        <input value={query.queryTerm} onChange={this.handleQueryTermChange} />
+        <button disabled={results.loading.started}>Search</button>
+        <label className="Query-field">
+          Duration:&nbsp;
+          <select
+            value={query.videoDuration}
+            onChange={this.handleVideoDurationChange}
+          >
+            {Object.values(VideoDuration).map((videoDuration) => (
+              <option key={videoDuration} value={videoDuration}>
+                {videoDuration}
+              </option>
+            ))}
+          </select>
+        </label>
+        <span className="Query-field Query-prevNext">
           <button
-            className="Query-field"
             type="button"
             onClick={this.handlePreviousClick}
             disabled={!results.data.prevPageToken || results.loading.started}
           >
-            Previous
+            Prev
           </button>
           <button
-            className="Query-field"
             type="button"
             onClick={this.handleNextClick}
             disabled={!results.data.nextPageToken || results.loading.started}
           >
             Next
           </button>
-        </div>
+        </span>
       </form>
     );
   }

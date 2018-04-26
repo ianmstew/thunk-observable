@@ -1,11 +1,18 @@
 .Query {
-  font-size: 14px;
+  font-size: 16px;
 }
 
-.Query-search {
-  margin-bottom: 10px;
+.Query button,
+.Query input,
+.Query select {
+  font-size: inherit;
 }
 
 .Query-field {
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+.Query-prevNext button {
+  width: 80px;
+  text-align: center;
 }
