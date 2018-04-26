@@ -1,4 +1,5 @@
 import loading from 'constants/loading';
+import AsyncReducer from 'utils/AsyncReducer';
 import { VideoDuration } from './models';
 import actionTypes from './actionTypes';
 
@@ -13,35 +14,12 @@ const initialState = {
   }
 };
 
+const searchAsyncReducer = AsyncReducer(actionTypes.SEARCH, 'results');
+
 export default function searchReducer(state = initialState, action) {
-  const newState = state;
+  const newState = searchAsyncReducer(state, action);
 
   switch (action.type) {
-    case actionTypes.SEARCH_STARTED:
-      return {
-        ...newState,
-        results: {
-          ...newState.results,
-          loading: loading.STARTED
-        }
-      };
-    case actionTypes.SEARCH_SUCCEEDED:
-      return {
-        ...newState,
-        results: {
-          ...newState.results,
-          loading: loading.SUCCEEDED,
-          data: action.payload
-        }
-      };
-    case actionTypes.SEARCH_FAILED:
-      return {
-        ...newState,
-        results: {
-          ...newState.results,
-          loading: loading.FAILED
-        }
-      };
     case actionTypes.SET_QUERY_TERM:
       const { queryTerm } = action.payload;
       return {
