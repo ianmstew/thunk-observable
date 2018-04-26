@@ -5,8 +5,8 @@ import './styles.css';
 export default class Query extends Component {
   handleSubmit = (evt) => {
     evt.preventDefault();
-    const { query, search } = this.props;
-    search(query);
+    const { submitSearch } = this.props;
+    submitSearch();
   };
 
   handleNextClick = () => {
