@@ -35,7 +35,7 @@ export default class Query extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="Query">
         <input value={query.queryTerm} onChange={this.handleQueryTermChange} />
-        <button disabled={results.loading.started}>Search</button>
+        <button>Search</button>
         <label className="Query-field">
           Duration:&nbsp;
           <select

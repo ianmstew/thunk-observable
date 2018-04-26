@@ -26,5 +26,15 @@ export async function search(query = {}) {
     throw new Error('Google API error');
   }
 
+  if (window.DEBUG_SLOW_PAGING && pageToken) {
+    await delay(5000);
+  }
+
   return json;
+}
+
+function delay(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
 }

@@ -13,6 +13,7 @@ const store = Store(history);
 
 window.STORE = process.env.NODE_ENV !== 'production' ? store : window.STORE;
 window.LOG_LEVEL = process.env.NODE_ENV !== 'production' ? 0 : 3;
+window.DEBUG_SLOW_PAGING = false;
 
 ReactDOM.render(
   <Provider store={store}>
