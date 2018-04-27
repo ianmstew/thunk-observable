@@ -25,7 +25,7 @@ npm start
 
 **Futher Optimizations**
 
-* Instead of letting async actions contain a promise (active request), have them contain a promise factory and promise factory arguments--thereby "purifying" them, making testing easier:
+* Instead of letting async actions contain a promise (active request), let them contain a promise factory and promise factory arguments--thereby "purifying" them, making testing easier:
 
   ```js
   export const search = (query) => ({
@@ -39,7 +39,7 @@ npm start
 
   Then, modify `async-actions#ResultAsyncAction` to perform the actual promise instantiation.
 
-* Instead of letting API helpers (`api/youtube.js`) return simple promises, have them return an Observable wrapped around a cancelable XHR request, such as `Rx.Observable.ajax()`. This will result in browser level request cancelation of abandoned async actions for free.
+* Instead of having API helpers (`api/youtube.js`) return simple promises, have them return an Observable wrapped around a cancelable XHR request, such as `Rx.Observable.ajax()`. This will result in browser level request cancelation of abandoned async actions for free.
 
   * Another option is to create a custom Observable wrapper around any cancelable XHR library of choice. These wrapper Observables can always be converted back to promises to retrofit within standard promise/async-await code using `RxJS.Observable.toPromise()`.
 
