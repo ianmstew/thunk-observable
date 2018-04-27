@@ -8,7 +8,7 @@ Iterate upon Thunk for Redux actions with Observables, following a less-is-more 
 npm i
 ```
 
-*Run*
+**Run**
 
 ```bash
 npm start
