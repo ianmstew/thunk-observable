@@ -1,20 +1,20 @@
-Goal
+**Goal**
 
 Iterate upon Thunk for Redux actions with Observables, following a less-is-more philosophy by introducing additional complexity strictly where necessary. In other words, rely on subset of Thunk, "promise actions," for 90% of an application, then leverage Observables to orchestrate true side effects.
 
-Install
+**Install**
 
 ```bash
 npm i
 ```
 
-Run
+*Run*
 
 ```bash
 npm start
 ```
 
-Thunk -> Observable Progression
+**Thunk -> Observable Progression**
 
 * [`part1-standard-thunk`](https://github.com/ianmstew/thunk-observable/tree/part1-standard-thunk)
 * [`part2-streamlined-thunk`](https://github.com/ianmstew/thunk-observable/compare/part1-standard-thunk...part2-streamlined-thunk)
@@ -23,7 +23,7 @@ Thunk -> Observable Progression
 * [`part5-observable-orchestration`](https://github.com/ianmstew/thunk-observable/compare/part4-observable-setup...part5-observable-orchestration)
 * [`part6-observable-enhancements`](https://github.com/ianmstew/thunk-observable/compare/part5-observable-orchestration...part6-observable-enhancements)
 
-Futher Optimizations
+**Futher Optimizations**
 
 * Instead of letting async actions contain a promise (active request), have them contain a promise factory and promise factory arguments--thereby "purifying" them, making testing easier:
 
@@ -47,9 +47,9 @@ Futher Optimizations
 
 * Customize action API's and action reduction within `async-actions.js` and `AsyncReducer.js` to fit the needs of a given given app.
 
-* Tests
+* Research a way to avoid the extra `handleSearchEpic` while still achieving request cancelation.
 
-Alternatives
+**Alternatives**
 
 * Eliminate Thunk and promise middleware and use Redux-Observable Epics exclusively (more traditional Redux-Observable approach).
 
