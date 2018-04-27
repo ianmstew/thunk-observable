@@ -41,7 +41,8 @@ npm start
 
 * Instead of having API helpers (`api/youtube.js`) return simple promises, have them return an Observable wrapped around a cancelable XHR request, such as `Rx.Observable.ajax()`. This will result in browser level request cancelation of abandoned async actions for free.
 
-  * Another option is to create a custom Observable wrapper around any cancelable XHR library of choice. These wrapper Observables can always be converted back to promises to retrofit within standard promise/async-await code using `RxJS.Observable.toPromise()`.
+  * Another option is to create a custom Observable wrapper around any cancelable XHR library of choice.
+  * Any Observables can be converted to a promise to retrofit within standard promise/async-await code using `RxJS.Observable.toPromise()`.
 
 * Implement error handling using the `meta.error` object of failed async actions.
 
